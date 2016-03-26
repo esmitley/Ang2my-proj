@@ -1,9 +1,6 @@
 import {Component} from 'angular2/core';
-
-export class Hero {
-  id: number;
-  name: string;
-}
+import {Hero} from './hero';
+import {HeroDetailComponent} from './hero-detail.component';
 
 
 @Component({
@@ -15,8 +12,9 @@ export class Hero {
   <li *ngFor="#hero of heroes" 
   [class.selected]="hero === selectedHero"
   (click)="onSelect(hero)">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
-  </li>
+    <span class="badge">{{hero.id}}</span> {{hero.name}}</li>
+	<my-hero-detail [hero]="selectedHero"></my-hero-detail>
+	
 </ul>
 <div *ngIf="selectedHero">
   <h2>{{selectedHero.name}} details!</h2>
@@ -75,6 +73,8 @@ styles:[`
       border-radius: 4px 0 0 4px;
     }
   `]
+  
+   directives: [HeroDetailComponent]
 
 })
 export class AppComponent {
