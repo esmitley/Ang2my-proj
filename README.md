@@ -1,6 +1,6 @@
-# Ang2my-proj :eyes:
+# Ang2my-proj
 
-Name of project:
+Name of project::eyes:
 
 Build instruction:
 
