@@ -40,6 +40,9 @@ System.register(['angular2/core', 'angular2/router', './hero-detail.component', 
                     this.getHeroes();
                 };
                 HeroesComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
+                HeroesComponent.prototype.gotoDetail = function () {
+                    this._router.navigate(['HeroDetail', { id: this.selectedHero.id }]);
+                };
                 HeroesComponent = __decorate([
                     core_1.Component({
                         selector: 'my-heroes',
@@ -52,10 +55,6 @@ System.register(['angular2/core', 'angular2/router', './hero-detail.component', 
                 return HeroesComponent;
             }());
             exports_1("HeroesComponent", HeroesComponent);
-            gotoDetail();
-            {
-                this._router.navigate(['HeroDetail', { id: this.selectedHero.id }]);
-            }
         }
     }
 });

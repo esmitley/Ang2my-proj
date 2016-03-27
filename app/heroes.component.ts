@@ -11,7 +11,6 @@ import { HeroService } from './hero.service';
 	styleUrls:  ['app/heroes.component.css'],
     directives: [HeroDetailComponent]
 })
-
 export class HeroesComponent implements OnInit {
 	  heroes: Hero[];
 	  selectedHero: Hero;
@@ -28,8 +27,8 @@ getHeroes() {
     this.getHeroes();
   }
   
- onSelect(hero: Hero) { this.selectedHero = hero; } 
-}
+  onSelect(hero: Hero) { this.selectedHero = hero; } 
+
   gotoDetail() {
     this._router.navigate(['HeroDetail', { id: this.selectedHero.id }]);
   }
